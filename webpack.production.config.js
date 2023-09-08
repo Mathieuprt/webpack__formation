@@ -1,5 +1,4 @@
 const path = require("path");
-const TerserPlugin = require("terser-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const htmlWebpackPlugin = require("html-webpack-plugin");
@@ -11,7 +10,7 @@ module.exports = {
     path: path.resolve(__dirname, "./dist"),
     publicPath: "dist/",
   },
-  mode: "none",
+  mode: "production",
   module: {
     rules: [
       {
@@ -47,10 +46,13 @@ module.exports = {
           },
         },
       },
+      {
+        test: /\.hbs$/,
+        use: ["handlebars-loader"],
+      },
     ],
   },
   plugins: [
-    new TerserPlugin(),
     new MiniCssExtractPlugin({
       filename: "styles[contenthash].css",
     }),
@@ -58,9 +60,9 @@ module.exports = {
     new htmlWebpackPlugin({
       filename: "../index.html",
       title: "Hello World",
-      meta: {
-        description: "Some description",
-      },
+      inject: "body",
+      description: "Some description",
+      template: "src/index.hbs",
     }),
   ],
 };
