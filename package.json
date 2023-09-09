@@ -17,6 +17,7 @@
     "handlebars": "^4.7.8",
     "handlebars-loader": "^1.7.3",
     "html-webpack-plugin": "^5.5.3",
+    "lodash": "^4.17.21",
     "mini-css-extract-plugin": "^2.7.6",
     "sass": "^1.66.1",
     "sass-loader": "^13.3.2",
@@ -29,6 +30,7 @@
     "@babel/core": "^7.22.11",
     "@babel/plugin-proposal-class-properties": "^7.18.6",
     "@babel/preset-env": "^7.22.10",
-    "babel-loader": "^9.1.3"
+    "babel-loader": "^9.1.3",
+    "react": "^18.2.0"
   }
 }

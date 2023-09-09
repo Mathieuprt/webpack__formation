@@ -14,6 +14,11 @@ module.exports = {
     publicPath: "dist/",
   },
   mode: "production",
+  optimization: {
+    splitChunks: {
+      chunks: "all",
+    },
+  },
   module: {
     rules: [
       {
