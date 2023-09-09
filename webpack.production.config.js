@@ -17,6 +17,7 @@ module.exports = {
   optimization: {
     splitChunks: {
       chunks: "all",
+      minSize: 3000,
     },
   },
   module: {
@@ -70,7 +71,7 @@ module.exports = {
       chunks: ["hello-world"],
       title: "Hello World",
       inject: "body",
-      description: "Some description",
+      description: "Hello World",
       template: "src/page-template.hbs",
       minify: false,
     }),
