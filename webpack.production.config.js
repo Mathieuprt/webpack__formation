@@ -62,10 +62,21 @@ module.exports = {
     new CleanWebpackPlugin(),
     new htmlWebpackPlugin({
       filename: "../index.html",
+      chunks: ["hello-world"],
       title: "Hello World",
       inject: "body",
       description: "Some description",
-      template: "src/index.hbs",
+      template: "src/page-template.hbs",
+      minify: false,
+    }),
+    new htmlWebpackPlugin({
+      filename: "../kiwi.html",
+      chunks: ["kiwi"],
+      title: "Kiwi",
+      inject: "body",
+      description: "Kiwi",
+      template: "src/page-template.hbs",
+      minify: false,
     }),
   ],
 };
